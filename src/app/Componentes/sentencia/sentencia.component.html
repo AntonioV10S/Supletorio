@@ -1,0 +1,43 @@
+<br>
+<h4>:: REGISTRO DE SENTENCIAS::</h4> <hr>
+<form class="my-form">
+  <select #id_ladron class="form-control">
+    <option>Seleccione el ladron ...</option>
+    @for (item of ladrones; track $index) {
+    <option value="{{item.id}}">{{item.nombre}}</option>
+    }
+  </select><br>
+  <div>
+    <label>Ingrese condena:</label><br>
+    <input type="number" #condena>
+  </div>
+  <div>
+    <label>Ingrese multa:</label><br>
+    <input type="number" #multa>
+  </div>
+  <br><br>
+  <button type="button" class="btn btn-success" (click)="storeSentencia(id_ladron, condena, multa)">Guardar</button>
+</form>
+
+<br>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NOMBRE</th>
+      <th scope="col">CONDENA</th>
+      <th scope="col">MULTA</th>
+
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    @for (item of sentencias; track $index) {
+      <tr>
+      <td>{{ item.id }}</td>
+      <td>{{ item.nombre }}</td>
+      <td>{{ item.condena }}</td>
+      <td>{{ item.multa }}</td>
+    </tr>
+  }
+  </tbody>
+</table>

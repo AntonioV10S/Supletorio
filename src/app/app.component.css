@@ -1,0 +1,43 @@
+
+body{
+  margin: 2%;
+}
+.nav-link{
+  color: white;
+  font-size: 20px;
+}
+.nav-link:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.338);
+  border-radius: 7px;
+  transition: background-color 0.3s, color 0.3s;
+}
+#LIBRERIA{
+  margin-right: 950px;
+}
+#AUTOR{
+  margin: 0 10px 0 0;
+}
+#LIBROS{
+  margin: 0 10px 0 0;
+}
+
+#BUSCAR
+{
+
+  border-radius: 7px;
+  margin: 6px;
+  padding: 5px 15px 5px 15px;
+  font-size: 20px;
+}
+#BUSCAR:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.338);
+  border-radius: 7px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+img{
+  height: 538px;
+  width: 1475px;
+}

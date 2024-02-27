@@ -1,0 +1,47 @@
+
+<br>
+<h4>:: REGISTRO DE POLICIAS::</h4> <hr>
+<form class="my-form">
+  <div>
+    <label>Ingrese nombre:</label><br>
+    <input type="text" #nombre>
+  </div>
+  <div>
+    <label>Ingrese apellido:</label><br>
+    <input type="text" #apellido>
+  </div>
+  <div>
+    <label>Ingrese cedula:</label><br>
+    <input type="text" #cedula>
+  </div>
+  <div>
+    <label>Ingrese rango:</label><br>
+    <input type="text" #rango>
+  </div><br><br>
+  <button type="button" class="btn btn-success" (click)="storePolicia(nombre, apellido, cedula, rango)">Guardar</button>
+</form>
+
+<br>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NOMBRE</th>
+      <th scope="col">APELLIDO</th>
+      <th scope="col">CEDULA</th>
+      <th scope="col">RANGO</th>
+
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    @for (item of policias; track $index) {
+      <tr>
+      <td>{{ item.id }}</td>
+      <td>{{ item.nombre }}</td>
+      <td>{{ item.apellido }}</td>
+      <td>{{ item.cedula }}</td>
+      <td>{{ item.rango }}</td>
+    </tr>
+  }
+  </tbody>
+</table>

@@ -1,0 +1,54 @@
+<br>
+<h4>:: REGISTRO DE LADRONES::</h4> <hr>
+<form class="my-form">
+  <select #id_policia class="form-control">
+    <option>Seleccione el policia ...</option>
+    @for (item of policias; track $index) {
+    <option value="{{item.id}}">{{item.nombre}}</option>
+    }
+  </select><br>
+  <div>
+    <label>Ingrese nombre:</label><br>
+    <input type="text" #nombre>
+  </div>
+  <div>
+    <label>Ingrese apellido:</label><br>
+    <input type="text" #apellido>
+  </div>
+  <div>
+    <label>Ingrese cedula:</label><br>
+    <input type="text" #cedula>
+  </div>
+  <div>
+    <label>Ingrese delito:</label><br>
+    <input type="text" #delito>
+  </div><br><br>
+  <button type="button" class="btn btn-success" (click)="storeLadron(id_policia, nombre, apellido, cedula, delito)">Guardar</button>
+</form>
+
+<br>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NOMBRE</th>
+      <th scope="col">APELLIDO</th>
+      <th scope="col">CEDULA</th>
+      <th scope="col">DELITO</th>
+      <th scope="col">POLICIA</th>
+
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    @for (item of ladrones; track $index) {
+      <tr>
+      <td>{{ item.id }}</td>
+      <td>{{ item.nombre }}</td>
+      <td>{{ item.apellido }}</td>
+      <td>{{ item.cedula }}</td>
+      <td>{{ item.delito }}</td>
+      <td>{{ item.policia }}</td>
+    </tr>
+  }
+  </tbody>
+</table>
